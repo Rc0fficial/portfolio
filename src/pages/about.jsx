@@ -41,7 +41,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Arsalan</title>
+        <title>About - Rc</title>
         <meta
           name="description"
           content="I’m Arsalan Ali Khattak. I live in Abbottabad City, where I Code the world."
