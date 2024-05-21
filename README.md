@@ -92,6 +92,6 @@ Projects section showcasing various works.
 ## Contact
 Feel free to reach out to me via the contact form on my portfolio or through the following:
 
-Email: to.arsalanali@gmail.com
-LinkedIn: Your LinkedIn Profile
-GitHub: Your GitHub Profile
+### Email: to.arsalanali@gmail.com
+### LinkedIn: Your LinkedIn Profile
+### GitHub: Your GitHub Profile
