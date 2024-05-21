@@ -80,7 +80,7 @@ npm start
 yarn start
 ```
 
-##Screenshots
+## Screenshots
 Add screenshots of your portfolio web app here to give potential users and employers a preview of what they can expect. For example:
 
 
@@ -89,7 +89,7 @@ Home page of the portfolio web app.
 
 Projects section showcasing various works.
 
-Contact
+## Contact
 Feel free to reach out to me via the contact form on my portfolio or through the following:
 
 Email: to.arsalanali@gmail.com
