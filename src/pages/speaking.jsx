@@ -4,7 +4,7 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-function SpeakingSection({ children, ...props }) {
+export default function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
       <div className="space-y-16">{children}</div>
@@ -25,7 +25,7 @@ function Appearance({ title, description, event, cta, href }) {
   )
 }
 
-export default function Speaking() {
+export function Speaking() {
   return (
     <>
       <Head>
@@ -40,11 +40,12 @@ export default function Speaking() {
         intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
       >
         <div className="space-y-20">
-          <SpeakingSection title="Conferences">
+          <SpeakingSection title="Stellar Stack">
             <Appearance
               href="#"
-              title="In space, no one can watch you stream — until now"
-              description="A technical deep-dive into HelioStream, the real-time streaming library I wrote for transmitting live video back to Earth."
+              title="Agile IT"
+              description="Maintained a blog app developed in Astro.js, Markdown, Tailwind CSS, CSS, SCSS, with modular components and data integrations. Collaborated with a team to improve the app's performance and scalability.
+              "
               event="SysConf 2021"
               cta="Watch video"
             />

@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -38,9 +38,16 @@ function MailIcon(props) {
   )
 }
 
-export const HomeComponent = () => {
+export default function About() {
   return (
     <>
+      {/* <Head>
+        <title>About - Rc</title>
+        <meta
+          name="description"
+          content="I’m Arsalan Ali Khattak. I live in Abbottabad City, where I Code the world."
+        />
+      </Head> */}
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
