@@ -1,9 +1,7 @@
 import Head from 'next/head'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
 import SpeakingSection from '../speaking'
 
 function Article({ article }) {
@@ -14,7 +12,6 @@ function Article({ article }) {
           {article.title}
         </Card.Title>
         <Card.Eyebrow as="time" className="md:hidden" decorate>
-          {/* {formatDate(article.date)} */}
           {article.Associated}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
@@ -24,7 +21,24 @@ function Article({ article }) {
   )
 }
 
+function ArticlesSection({ title, articles }) {
+  return (
+    <SpeakingSection title={title}>
+      {articles.map((article) => (
+        <Article key={article.slug} article={article} />
+      ))}
+    </SpeakingSection>
+  )
+}
+
 export default function ArticlesIndex({ articles }) {
+  const categories = ['Codeband', 'Stellar Stack', 'Arsol', 'Freelance']
+
+  const categorizedArticles = categories.map((category) => ({
+    title: category,
+    articles: articles.filter((article) => article.Associated === category),
+  }))
+
   return (
     <>
       <Head>
@@ -38,23 +52,23 @@ export default function ArticlesIndex({ articles }) {
         title="Writing on software design, company building, and the aerospace industry."
         intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
       >
-        <SpeakingSection title="Stellar Stack">
-          {articles.map((article) => (
-            <Article key={article.slug} article={article} />
-          ))}
-        </SpeakingSection>
-        {/* <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-          <div className="flex max-w-3xl flex-col space-y-16"></div>
-        </div> */}
+        {categorizedArticles.map(({ title, articles }) =>
+          articles.length > 0 ? (
+            <ArticlesSection key={title} title={title} articles={articles} />
+          ) : null
+        )}
       </SimpleLayout>
     </>
   )
 }
 
 export async function getStaticProps() {
+  const allArticles = await getAllArticles()
+  const articles = allArticles.map(({ component, ...meta }) => meta)
+
   return {
     props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+      articles,
     },
   }
 }
