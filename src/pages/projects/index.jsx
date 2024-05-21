@@ -1,15 +1,16 @@
-import Image from 'next/image'
 import Head from 'next/head'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { getAllArticles } from '@/lib/getAllArticles'
+import SpeakingSection from '../speaking'
+import Image from 'next/image'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 
-const projects = [
+const History = [
   {
     name: 'Planetaria',
     description:
@@ -47,6 +48,23 @@ const projects = [
   },
 ]
 
+function Projects({ article }) {
+  return (
+    <article className="md:grid md:grid-cols-4 md:items-baseline">
+      <Card className="md:col-span-4">
+        <Card.Title href={`/projects/${article.slug}`}>
+          {article.title}
+        </Card.Title>
+        {/* <Card.Eyebrow as="time" className="md:hidden" decorate>
+          {article.Associated}
+        </Card.Eyebrow> */}
+        <Card.Description>{article.description}</Card.Description>
+        <Card.Cta>Read article</Card.Cta>
+      </Card>
+    </article>
+  )
+}
+
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -58,25 +76,42 @@ function LinkIcon(props) {
   )
 }
 
-export default function Projects() {
+function ArticlesSection({ title, articles }) {
+  return (
+    <SpeakingSection title={title}>
+      {articles.map((article) => (
+        <Projects key={article.slug} article={article} />
+      ))}
+    </SpeakingSection>
+  )
+}
+
+export default function ArticlesIndex({ articles }) {
+  const categories = ['Codeband', 'Stellar Stack', 'Arsol', 'Freelance']
+
+  const categorizedArticles = categories.map((category) => ({
+    title: category,
+    articles: articles.filter((article) => article.Associated === category),
+  }))
+
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Articles - Arsalan</title>
         <meta
           name="description"
-          content="Things I’ve made trying to put my dent in the universe."
+          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
         />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="Writing on software design, company building, and the aerospace industry."
+        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
       >
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
+          {History.map((project) => (
             <Card as="li" key={project.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
@@ -97,7 +132,23 @@ export default function Projects() {
             </Card>
           ))}
         </ul>
+        {categorizedArticles.map(({ title, articles }) =>
+          articles.length > 0 ? (
+            <ArticlesSection key={title} title={title} articles={articles} />
+          ) : null
+        )}
       </SimpleLayout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const allArticles = await getAllArticles()
+  const articles = allArticles.map(({ component, ...meta }) => meta)
+
+  return {
+    props: {
+      articles,
+    },
+  }
 }
