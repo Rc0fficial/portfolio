@@ -78,7 +78,7 @@ export default function Resume() {
     },
     {
       company: 'Stellar Stack',
-      title: 'Frontend Developer',
+      title: 'Full Stack Front-End Developer',
       logo: stellarstack,
       start: 'MAY 2023',
       end: '2024 JAN',
