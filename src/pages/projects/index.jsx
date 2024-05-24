@@ -4,7 +4,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllArticles } from '@/lib/getAllArticles'
 import SpeakingSection from '../speaking'
 import Image from 'next/image'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
+import stellarstack from '@/images/logos/stellarstack.webp'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
@@ -12,18 +12,18 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const History = [
   {
-    name: 'Planetaria',
+    name: 'Stellar Stack',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      "At Stellar Stack, I was Full Stack Front-End Developer, specialize in building dynamic web applications using modern technologies, particularly the React ecosystem. My expertise lies in integrating and creating headless CMS solutions to develop seamless front-end and back-end experiences. I'm passionate about innovative web development and delivering impactful, efficient solutions. During my time here, I've worked on multiple web apps and projects, some of which are listed below",
     link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    logo: stellarstack,
   },
   {
     name: 'Animaginary',
     description:
       'High performance web animation library, hand-written in optimized WASM.',
     link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    // logo: logoAnimaginary,
   },
   {
     name: 'HelioStream',
@@ -117,10 +117,11 @@ export default function ArticlesIndex({ articles }) {
                 <Image
                   src={project.logo}
                   alt=""
-                  className="h-8 w-8"
+                  className="h-8 w-8 rounded-full"
                   unoptimized
                 />
               </div>
+
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>

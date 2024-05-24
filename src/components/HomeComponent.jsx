@@ -17,13 +17,14 @@ import Skills from './Skills'
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-yellow-500" />
-        <span className="ml-4">{children}</span>
+      <Link href={href} passHref legacyBehavior>
+        <a
+          className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+          target="_blank"
+        >
+          <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-yellow-500" />
+          <span className="ml-4">{children}</span>
+        </a>
       </Link>
     </li>
   )
@@ -97,7 +98,11 @@ export const HomeComponent = () => {
               <SocialLink href="#" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/rc0fficial/"  icon={LinkedInIcon} className="mt-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/rc0fficial/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
