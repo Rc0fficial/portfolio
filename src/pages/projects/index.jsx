@@ -7,10 +7,17 @@ import Image from 'next/image'
 import stellarstack from '@/images/logos/stellarstack.webp'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import codeband from '@/images/logos/codeband.png'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
+import fiverr from '@/images/logos/fiverr.svg'
 import arsol from '@/images/logos/arsol.png'
 
 const History = [
+  {
+    name: 'Freelance',
+    description:
+      "Throughout my freelance career on platforms like Fiverr, I've had the opportunity to work on a multitude of projects individually, leveraging a wide array of technologies. These experiences have honed my skills in front-end development, back-end integration, and content management. Here are some of the key technologies and projects I've worked on",
+    // link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+    logo: fiverr,
+  },
   {
     name: 'StellarStack',
     description:
@@ -79,15 +86,15 @@ export default function ArticlesIndex({ articles }) {
   }))
 
   const handleCardClick = (event, id) => {
-    event.preventDefault(); // Prevent default anchor behavior
-    const element = document.getElementById(id);
+    event.preventDefault() // Prevent default anchor behavior
+    const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'center', // Center the element vertically in the viewport
-      });
+      })
     }
-  };
+  }
 
   return (
     <>
@@ -107,7 +114,11 @@ export default function ArticlesIndex({ articles }) {
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {History.map((project) => (
-            <a href={`#${project.name}`} key={project.name} onClick={(e) => handleCardClick(e, project.name)}>
+            <a
+              href={`#${project.name}`}
+              key={project.name}
+              onClick={(e) => handleCardClick(e, project.name)}
+            >
               <Card as="li" key={project.name}>
                 <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <Image
