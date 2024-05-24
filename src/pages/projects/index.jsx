@@ -12,14 +12,14 @@ import arsol from '@/images/logos/arsol.png'
 
 const History = [
   {
-    name: 'Stellar Stack',
+    name: 'StellarStack',
     description:
       "At Stellar Stack, I was Full Stack Front-End Developer, specialize in building dynamic web applications using modern technologies, particularly the React ecosystem. My expertise lies in integrating and creating headless CMS solutions to develop seamless front-end and back-end experiences. I'm passionate about innovative web development and delivering impactful, efficient solutions. During my time here, I've worked on multiple web apps and projects, some of which are listed below",
     // link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
     logo: stellarstack,
   },
   {
-    name: 'Animaginary',
+    name: 'CodeBand',
     description:
       "Contributed as a front-end developer with expertise in Next.js, React.js, Strapi.js, and Tailwind CSS. Focused on enhancing user experience and delivering high-quality projects on time and within budget. Dedicated to staying current with the latest technologies and industry best practices. Some of the projects I've worked on with Codeband are listed below.",
     logo: codeband,
@@ -60,9 +60,9 @@ function LinkIcon(props) {
   )
 }
 
-function ArticlesSection({ title, articles }) {
+function ArticlesSection({ id, title, articles }) {
   return (
-    <SpeakingSection title={title}>
+    <SpeakingSection id={id} title={title}>
       {articles.map((article) => (
         <Projects key={article.slug} article={article} />
       ))}
@@ -71,12 +71,23 @@ function ArticlesSection({ title, articles }) {
 }
 
 export default function ArticlesIndex({ articles }) {
-  const categories = ['Code Band', 'Stellar Stack', 'Arsol', 'Freelance']
+  const categories = ['CodeBand', 'StellarStack', 'Arsol', 'Freelance']
 
   const categorizedArticles = categories.map((category) => ({
     title: category,
     articles: articles.filter((article) => article.Associated === category),
   }))
+
+  const handleCardClick = (event, id) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center', // Center the element vertically in the viewport
+      });
+    }
+  };
 
   return (
     <>
@@ -96,31 +107,39 @@ export default function ArticlesIndex({ articles }) {
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {History.map((project) => (
-            <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8 rounded-full"
-                  unoptimized
-                />
-              </div>
+            <a href={`#${project.name}`} key={project.name} onClick={(e) => handleCardClick(e, project.name)}>
+              <Card as="li" key={project.name}>
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                  <Image
+                    src={project.logo}
+                    alt=""
+                    className="h-8 w-8 rounded-full"
+                    unoptimized
+                  />
+                </div>
 
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                {/* <Card.Link href={project.link.href}>{project.name}</Card.Link> */}
-                {project.name}
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-yellow-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                {/* <span className="ml-2">{project.link.label}</span> */}
-              </p>
-            </Card>
+                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  {/* <Card.Link href={project.link.href}>{project.name}</Card.Link> */}
+                  {project.name}
+                </h2>
+                <Card.Description>{project.description}</Card.Description>
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-yellow-500 dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  {/* <span className="ml-2">{project.link.label}</span> */}
+                </p>
+              </Card>
+            </a>
           ))}
         </ul>
+
         {categorizedArticles.map(({ title, articles }) =>
           articles.length > 0 ? (
-            <ArticlesSection key={title} title={title} articles={articles} />
+            <ArticlesSection
+              id={title}
+              key={title}
+              title={title}
+              articles={articles}
+            />
           ) : null
         )}
       </SimpleLayout>
