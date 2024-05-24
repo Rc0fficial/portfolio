@@ -71,7 +71,7 @@ function ArticlesSection({ title, articles }) {
 }
 
 export default function ArticlesIndex({ articles }) {
-  const categories = ['Codeband', 'Stellar Stack', 'Arsol', 'Freelance']
+  const categories = ['Code Band', 'Stellar Stack', 'Arsol', 'Freelance']
 
   const categorizedArticles = categories.map((category) => ({
     title: category,
