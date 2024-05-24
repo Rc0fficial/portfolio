@@ -4,10 +4,10 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-export default function SpeakingSection({ children, ...props }) {
+export default function SpeakingSection({id, children, ...props }) {
   return (
     <Section {...props}>
-      <div className="space-y-16">{children}</div>
+      <div id={id} className="space-y-16">{children}</div>
     </Section>
   )
 }
