@@ -6,45 +6,29 @@ import SpeakingSection from '../speaking'
 import Image from 'next/image'
 import stellarstack from '@/images/logos/stellarstack.webp'
 import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
+import codeband from '@/images/logos/codeband.png'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import arsol from '@/images/logos/arsol.png'
 
 const History = [
   {
     name: 'Stellar Stack',
     description:
       "At Stellar Stack, I was Full Stack Front-End Developer, specialize in building dynamic web applications using modern technologies, particularly the React ecosystem. My expertise lies in integrating and creating headless CMS solutions to develop seamless front-end and back-end experiences. I'm passionate about innovative web development and delivering impactful, efficient solutions. During my time here, I've worked on multiple web apps and projects, some of which are listed below",
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+    // link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
     logo: stellarstack,
   },
   {
     name: 'Animaginary',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    // logo: logoAnimaginary,
+      "Contributed as a front-end developer with expertise in Next.js, React.js, Strapi.js, and Tailwind CSS. Focused on enhancing user experience and delivering high-quality projects on time and within budget. Dedicated to staying current with the latest technologies and industry best practices. Some of the projects I've worked on with Codeband are listed below.",
+    logo: codeband,
   },
   {
-    name: 'HelioStream',
+    name: 'Arsol',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Gained hands-on experience in front-end development using React.js, Next.js, HTML, CSS, Tailwind CSS, and MySQL. Developed responsive web applications, collaborated with cross-functional teams, and contributed to optimizing the user interface for better performance and accessibility. Enhanced skills in modern front-end technologies and best practices.',
+    logo: arsol,
   },
 ]
 
@@ -123,12 +107,12 @@ export default function ArticlesIndex({ articles }) {
               </div>
 
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                {/* <Card.Link href={project.link.href}>{project.name}</Card.Link> */}
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-yellow-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
+                {/* <span className="ml-2">{project.link.label}</span> */}
               </p>
             </Card>
           ))}
