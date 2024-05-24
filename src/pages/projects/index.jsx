@@ -22,7 +22,7 @@ const History = [
     name: 'StellarStack',
     description:
       "At Stellar Stack, I was Full Stack Front-End Developer, specialize in building dynamic web applications using modern technologies, particularly the React ecosystem. My expertise lies in integrating and creating headless CMS solutions to develop seamless front-end and back-end experiences. I'm passionate about innovative web development and delivering impactful, efficient solutions. During my time here, I've worked on multiple web apps and projects, some of which are listed below",
-    // link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+    // link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },  
     logo: stellarstack,
   },
   {
