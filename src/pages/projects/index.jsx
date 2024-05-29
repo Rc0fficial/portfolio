@@ -28,7 +28,7 @@ const History = [
   {
     name: 'CodeBand',
     description:
-      "At CodeBand, I have developed and maintained a wide range of web applications within the React ecosystem, including React, Next.js, Tailwind CSS, Strapi, Redux, Redux Tool Kit,  Strapi and Contentful,. Working collaboratively with a talented team, I contributed to creating highly efficient and user-friendly web solutions. Some of the projects I've worked on with Codeband are listed below.",
+      "Contributed as a front-end developer with expertise in Next.js, React.js, Strapi.js, and Tailwind CSS. Focused on enhancing user experience and delivering high-quality projects on time and within budget. Dedicated to staying current with the latest technologies and industry best practices. Some of the projects I've worked on with Codeband are listed below.",
     logo: codeband,
   },
   {
@@ -99,15 +99,15 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Projects - Arsalan</title>
+        <title>Articles - Arsalan</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+          content="Welcome to my projects showcase! This page features a selection of the standout projects I've developed, highlighting my skills and expertise in modern frontend technologies. Each project demonstrates my ability to create dynamic, responsive, and user-friendly applications. Please note, this is just a glimpse of my work. Some projects are not displayed here due to confidentiality. Dive in to see how I bring innovative ideas to life through thoughtful design and robust development."
         />
       </Head>
       <SimpleLayout
-        title="Writing on software design, company building, and the aerospace industry."
-        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+        title="Highlighted Projects"
+        intro="Welcome to my projects showcase! This page features a selection of the standout projects I've developed, highlighting my skills and expertise in modern frontend technologies. Each project demonstrates my ability to create dynamic, responsive, and user-friendly applications. Please note, this is just a glimpse of my work. Some projects are not displayed here due to confidentiality. Dive in to see how I bring innovative ideas to life through thoughtful design and robust development."
       >
         <ul
           role="list"
