@@ -1,4 +1,3 @@
-// pages/_app.js
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { Footer } from '@/components/Footer';
@@ -6,6 +5,8 @@ import { Header } from '@/components/Header';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import '@/styles/tailwind.css';
 import 'focus-visible';
+import Script from 'next/script';
+import AdSense from '@/components/AdSense';
 
 function usePrevious(value) {
   let ref = useRef();
@@ -37,6 +38,17 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <GoogleAnalytics />
+      <Script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3285463246047568"
+  crossOrigin="anonymous"
+/>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3285463246047568"
+        crossOrigin="anonymous"
+      ></Script>
+      <AdSense/>
       <div className="fixed inset-0 flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
