@@ -50,7 +50,7 @@ function Projects({ article }) {
           {article.Associated}
         </Card.Eyebrow> */}
         <Card.Description>{article.description}</Card.Description>
-        <Card.Cta>Read article</Card.Cta>
+        <Card.Cta>Read</Card.Cta>
       </Card>
     </article>
   )
