@@ -99,7 +99,7 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Articles - Arsalan</title>
+        <title>Projects - Arsalan</title>
         <meta
           name="description"
           content="Welcome to my projects showcase! This page features a selection of the standout projects I've developed, highlighting my skills and expertise in modern frontend technologies. Each project demonstrates my ability to create dynamic, responsive, and user-friendly applications. Please note, this is just a glimpse of my work. Some projects are not displayed here due to confidentiality. Dive in to see how I bring innovative ideas to life through thoughtful design and robust development."
