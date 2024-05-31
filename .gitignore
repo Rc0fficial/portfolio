@@ -33,3 +33,7 @@ yarn-error.log*
 
 # generated files
 /public/rss/
+
+
+.env.local
+.env
