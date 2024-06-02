@@ -107,7 +107,7 @@ export const HomeComponent = () => {
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:to.arsalanali@gmail.com"
                 className="mt-3.5"
                 icon={MailIcon}
               >
