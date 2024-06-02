@@ -7,7 +7,7 @@ import Image from 'next/image'
 import stellarstack from '@/images/logos/stellarstack.webp'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import codeband from '@/images/logos/codeband.png'
-import fiverr from '@/images/logos/fiverr.svg'
+import fiverr from '@/images/logos/fiverr-1.svg'
 import arsol from '@/images/logos/arsol.png'
 
 const History = [
