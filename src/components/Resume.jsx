@@ -5,6 +5,7 @@ import codeband from '@/images/logos/codeband.png'
 import arsol from '@/images/logos/arsol.png'
 import Image from 'next/image'
 import { Button } from './Button'
+// import Resume from ""
 
 function MailIcon(props) {
   return (
@@ -52,8 +53,6 @@ function BriefcaseIcon(props) {
   )
 }
 
-
-
 function ArrowDownIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
@@ -68,6 +67,14 @@ function ArrowDownIcon(props) {
 }
 
 export default function Resume() {
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/Resume.pdf';
+    link.download = 'Arsalan_resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   let resume = [
     {
       company: 'Fiverr',
@@ -148,8 +155,8 @@ export default function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
+      <Button onClick={handleDownload} variant="secondary" className="group mt-6 w-full" >
+        Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
