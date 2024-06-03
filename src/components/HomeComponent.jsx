@@ -94,7 +94,7 @@ export const HomeComponent = () => {
               <SocialLink href="#" icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+              <SocialLink href="https://www.instagram.com/rc0fficial" icon={InstagramIcon} className="mt-4">
                 Follow on Instagram
               </SocialLink>
               <SocialLink href="https://github.com/Rc0fficial" icon={GitHubIcon} className="mt-4">
