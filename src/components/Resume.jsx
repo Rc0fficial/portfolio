@@ -1,6 +1,6 @@
 import React from 'react'
 import stellarstack from '@/images/logos/stellarstack.webp'
-import fiverr from '@/images/logos/fiverr.svg'
+import fiverr from '@/images/logos/fiverr-1.svg'
 import codeband from '@/images/logos/codeband.png'
 import arsol from '@/images/logos/arsol.png'
 import Image from 'next/image'
@@ -51,6 +51,9 @@ function BriefcaseIcon(props) {
     </svg>
   )
 }
+
+
+
 function ArrowDownIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>

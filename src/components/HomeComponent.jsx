@@ -9,6 +9,7 @@ import {
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  Fiverr,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import Resume from '@/components/Resume'
@@ -112,6 +113,13 @@ export const HomeComponent = () => {
                 icon={MailIcon}
               >
                 to.arsalanali@gmail.com
+              </SocialLink>
+              <SocialLink
+                href="https://www.fiverr.com/arsalanali248"
+                className="mt-3.5"
+                icon={Fiverr}
+              >
+                Fiverr
               </SocialLink>
             </ul>
             <div className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
